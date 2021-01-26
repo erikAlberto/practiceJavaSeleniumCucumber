@@ -1,0 +1,17 @@
+/.gradle/
+/.idea/
+/build/
+*/build/
+/out/
+/target/
+/logs/
+/.allure/
+*.iml
+*.DS_Store
+*.class
+*.bin
+*.idx
+*.css
+*.html
+*.js
+*.jar
