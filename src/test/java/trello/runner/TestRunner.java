@@ -1,5 +1,8 @@
 package trello.runner;
 
+import selenium.WebDriverManager;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -12,4 +15,14 @@ import cucumber.api.junit.Cucumber;
 )
 
 public class TestRunner {
+
+    @BeforeClass
+    public static void setUp(){
+        WebDriverManager.getInstance().initialize();
+    }
+
+    @AfterClass
+    public static void tearDown() {
+        WebDriverManager.getInstance().quitDriver();
+    }
 }
