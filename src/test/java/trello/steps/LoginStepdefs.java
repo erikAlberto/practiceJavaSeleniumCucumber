@@ -1,12 +1,11 @@
 package trello.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import trello.HomePage;
-import trello.LoginPage;
+import trello.pages.HomePage;
+import trello.pages.LoginPage;
 
 
 import static org.junit.Assert.assertEquals;
@@ -20,28 +19,42 @@ public class LoginStepdefs {
         loginPage = new LoginPage();
     }
 
-    @Given("^I navigate to Login page$")
-    public void iNavigateToLoginPage() {
+    @Given("^User navigate to \"([^\"]*)\" Login page$")
+    public void iNavigateToLoginPage(String url) throws Throwable {
+        loginPage.getUrl(url);
     }
 
-//    @When("^I login as \"([^\"]*)\" with password \"([^\"]*)\"$")
-//    public void iLoginAsWithPassword(String username, String password) throws Throwable {
-//        homePage = loginPage.login(username,password);
-//    }
-
-    @When("^I login as \"([^\"]*)\"$")
+    @When("^User login as \"([^\"]*)\"$")
     public void iLoginAs(String username) throws Throwable {
-        homePage = loginPage.loginWithAtlassian(username);
+        loginPage.loginWithAtlassian(username);
     }
 
-    @And("^I login with password \"([^\"]*)\"$")
+    @And("^User login with password \"([^\"]*)\"$")
     public void iLoginWithPassword(String password) throws Throwable {
         homePage = loginPage.login(password);
     }
 
-    @Then("^I should login successfully \"([^\"]*)\"$")
+    @Then("^User should login successfully \"([^\"]*)\"$")
     public void iShouldLoginSuccessfully(String title) throws Throwable {
         assertEquals(homePage.getTitle(),title);
     }
 
+    @Then("^I should not login successfully \"([^\"]*)\"$")
+    public void iShouldNotLoginSuccessfully(String message) throws Throwable {
+        assertEquals(loginPage.getError(), message);
+    }
+
+    @Given("^User navigate to \"([^\"]*)\"$")
+    public void userNavigateTo(String url) throws Throwable {
+        loginPage.getUrl(url);
+    }
+
+    @When("^User logs out on the page$")
+    public void userLogsOutOnThePage() {
+        loginPage.logOut();
+    }
+
+    @Then("^Message displayed Logout successfully$")
+    public void messageDisplayedLogoutSuccessfully() {
+    }
 }

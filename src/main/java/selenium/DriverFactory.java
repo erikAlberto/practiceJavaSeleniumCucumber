@@ -19,7 +19,6 @@ public class DriverFactory {
         if (driver == null) {
             driver = createDriver();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            //driver.manage().window().fullscreen();
         }
         return driver;
     }

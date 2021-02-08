@@ -17,7 +17,7 @@ import cucumber.api.junit.Cucumber;
 public class TestRunner {
 
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.getInstance().initialize();
     }
 

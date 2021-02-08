@@ -24,7 +24,6 @@ public class WebDriverManager {
     public void initialize() {
         this.webDriver = DriverFactory.getDriver();
         this.webDriver.manage().window().maximize();
-        this.webDriver.get("https://trello.com/login");
     }
 
     /**
