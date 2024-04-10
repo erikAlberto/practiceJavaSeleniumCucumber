@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage extends BasePage{
-    @FindBy(className = "_3qwe2tMMFonNvf")
+    @FindBy(className = "DD3DlImSMT6fgc")
     private WebElement title;
 
     @FindBy(css = "._2aV_KY1gTq1qWc.icon-add.icon-sm")

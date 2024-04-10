@@ -24,10 +24,10 @@ public class LoginPage extends BasePage{
     @FindBy(css = "#login-error > span")
     private WebElement error;
 
-    @FindBy(css = "._24AWINHReYjNBf.aYXvcYtXemTcSj")
+    @FindBy(xpath = "//div[@data-testid='header-member-menu-avatar']")
     private WebElement userIcon;
 
-    @FindBy(xpath = "//button[@data-test-id='header-member-menu-logout']")
+    @FindBy(xpath = "//button[@data-testid='account-menu-logout']")
     private WebElement logOutLink;
 
     @FindBy(xpath = "//button[@id='logout-submit']")
@@ -55,7 +55,7 @@ public class LoginPage extends BasePage{
      */
     private void setPassword(String password) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.visibilityOf(loginButton));
+        wait.until(ExpectedConditions.visibilityOf(passwordTextBox));
         passwordTextBox.sendKeys(password);
     }
 
