@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class MemberPage extends BasePage{
 
     @FindBy(css = ".autocomplete-input")
@@ -17,7 +19,7 @@ public class MemberPage extends BasePage{
     private WebElement memberNameField;
 
     public void setTeamMember (String email) {
-        WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(addTeamMemberTextField));
         addTeamMemberTextField.sendKeys(email);
     }

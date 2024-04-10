@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class HomePage extends BasePage{
     @FindBy(className = "_3qwe2tMMFonNvf")
     private WebElement title;
@@ -110,7 +112,7 @@ public class HomePage extends BasePage{
 
     public void selectNameTeam(String nameLink) {
         if (nameLink.equalsIgnoreCase("Members")) {
-            WebDriverWait wait = new WebDriverWait(driver,30);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.visibilityOf(nameTeamButton));
             nameTeamButton.click();
             memberLink.click();
@@ -127,7 +129,7 @@ public class HomePage extends BasePage{
 //    }
     public void clickButton (String nameButton) {
         if (nameButton.equalsIgnoreCase("Create new board")) {
-            WebDriverWait wait = new WebDriverWait(driver,40);
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(40));
             wait.until(ExpectedConditions.visibilityOf(createNewBoardButton));
             createNewBoardButton.click();
         }else if (nameButton.equalsIgnoreCase("Invite to team")) {
@@ -135,7 +137,7 @@ public class HomePage extends BasePage{
 //            wait.until(ExpectedConditions.visibilityOf(inviteTeamButton));
 //            inviteTeamButton.click();
         }else if (nameButton.equalsIgnoreCase("Create Board")) {
-            WebDriverWait wait = new WebDriverWait(driver,40);
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(40));
             wait.until(ExpectedConditions.visibilityOf(createBoardButton));
             createBoardButton.click();
         } else if (nameButton.equalsIgnoreCase("Add list")) {
@@ -160,7 +162,7 @@ public class HomePage extends BasePage{
     }
 
     public void fillTitleBoard (String title) {
-        WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(createBoardButton));
         boardTitleTextField.sendKeys(title);
     }
@@ -170,7 +172,7 @@ public class HomePage extends BasePage{
     }
 
     public void removeMember () {
-        WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(removeMemberLink));
         removeMemberLink.click();
         wait.until(ExpectedConditions.visibilityOf(removeMemberPopUp));
@@ -193,7 +195,7 @@ public class HomePage extends BasePage{
     public void createBoard (String name) {
         openHomePage();
         createNewBoardButton.click();
-        WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(createBoardButton));
         boardTitleTextField.sendKeys(name);
         wait.until(ExpectedConditions.visibilityOf(createBoardButton));

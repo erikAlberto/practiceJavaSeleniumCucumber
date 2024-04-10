@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class LoginPage extends BasePage{
 
     @FindBy(id = "user")
@@ -52,7 +54,7 @@ public class LoginPage extends BasePage{
      * @param password - The user password.
      */
     private void setPassword(String password) {
-        WebDriverWait wait = new WebDriverWait(driver,40);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         wait.until(ExpectedConditions.visibilityOf(loginButton));
         passwordTextBox.sendKeys(password);
     }

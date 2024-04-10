@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class BoardPage extends BasePage {
     @FindBy(css = ".placeholder")
@@ -43,7 +44,7 @@ public class BoardPage extends BasePage {
     private WebElement boardDeletedLabel;
 
     public void fillCardName (String name) {
-        WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(cardNameTextField));
         cardNameTextField.sendKeys(name);
     }
@@ -51,7 +52,7 @@ public class BoardPage extends BasePage {
     public void createCard (String name) {
         addCardListButton.click();
         fillCardName(name);
-        WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(addListButton));
         addListButton.click();
     }
