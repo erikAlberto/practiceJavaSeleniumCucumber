@@ -11,7 +11,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/cucumber.xml"},
         features = "src/test/resources/features",
-        glue= {"trello/steps"}
+        glue= {"trello/steps"},
+        tags= "@login"
 )
 
 public class TestRunner {
