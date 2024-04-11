@@ -1,4 +1,4 @@
-package trello.pages;
+package core.pages.trello;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

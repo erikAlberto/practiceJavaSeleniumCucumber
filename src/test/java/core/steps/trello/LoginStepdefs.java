@@ -1,11 +1,11 @@
-package trello.steps;
+package core.steps.trello;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import trello.pages.HomePage;
-import trello.pages.LoginPage;
+import core.pages.trello.HomePage;
+import core.pages.trello.LoginPage;
 
 
 import static org.junit.Assert.assertEquals;

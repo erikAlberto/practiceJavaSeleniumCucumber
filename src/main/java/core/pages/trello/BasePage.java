@@ -1,9 +1,8 @@
-package trello.pages;
+package core.pages.trello;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import selenium.WebDriverManager;
 
 public abstract class BasePage {

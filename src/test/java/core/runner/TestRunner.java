@@ -1,4 +1,4 @@
-package trello.runner;
+package core.runner;
 
 import selenium.WebDriverManager;
 import org.junit.AfterClass;
@@ -10,11 +10,10 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/cucumber.xml"},
-        features = "src/test/resources/features",
-        glue= {"trello/steps"},
+        features = "src/test/resources/features/trello",
+        glue= {"core/steps"},
         tags= "@login"
 )
-
 public class TestRunner {
 
     @BeforeClass

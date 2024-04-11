@@ -1,13 +1,13 @@
-package trello.steps;
+package core.steps.trello;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import trello.pages.BoardPage;
-import trello.pages.HomePage;
-import trello.pages.MemberPage;
+import core.pages.trello.BoardPage;
+import core.pages.trello.HomePage;
+import core.pages.trello.MemberPage;
 
 
 import static org.junit.Assert.assertEquals;
